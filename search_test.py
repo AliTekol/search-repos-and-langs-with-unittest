@@ -2,8 +2,10 @@ import unittest
 from search import github_search
 
 class SearchTest(unittest.TestCase): 
-    def test(self):   
-        output = github_search("arduino", "python") 
+    def test(self):
+        
+        output = github_search("arduino", "python")
+        print(output)
         num_lines = 0  
         for line in output:
             num_lines += 1
