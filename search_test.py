@@ -6,8 +6,16 @@ class SearchTest(unittest.TestCase):
     def test(self):   
 
         
-        status_code_of_function = github_search("arduino", "python")
-        self.assertEqual(status_code_of_function,200)
+        output = github_search("arduino", "python")
+        
+        
+        num_lines = 0
+        
+        for line in output:
+            num_lines += 1
+        print("Count of the sites :",num_lines)
+
+        self.assertGreaterEqual(num_lines,1)
 
 if __name__ == '__main__':
     unittest.main()
